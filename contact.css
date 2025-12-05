@@ -1,0 +1,235 @@
+/* style_contact.css
+   Scoped styles for the contact page only.
+   Do NOT put global header or body rules here.
+*/
+
+.contact-page {
+  --container-width: 1100px;
+  font-family: 'Poppins', sans-serif;
+  color: #2d2d2d;
+  background: #ffffff; /* page background (keeps header distinct) */
+  padding-top: 20px;
+}
+
+/* page container */
+.contact-page .contact-wrap .container {
+  max-width: var(--container-width);
+  margin: 30px auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 34px;
+  align-items: start;
+  box-sizing: border-box;
+}
+
+/* FORM CARD */
+.contact-page .form-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 6px 20px rgba(16,24,40,0.06);
+}
+
+.contact-page .form-card h1 {
+  font-size: 28px;
+  margin: 0 0 8px;
+  color: #111;
+}
+
+.contact-page .form-card p {
+  margin: 0 0 18px;
+  color: #555;
+}
+
+/* floating label fields */
+.contact-page .field {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.contact-page .field input,
+.contact-page .field textarea {
+  width: 100%;
+  padding: 14px 12px;
+  border: 1px solid #e6e6e6;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color .14s, box-shadow .14s;
+  box-sizing: border-box;
+}
+
+.contact-page .field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-page .field label {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  font-size: 13px;
+  color: #888;
+  pointer-events: none;
+  transition: transform .12s ease, font-size .12s ease, top .12s ease;
+}
+
+/* when input has content or focus */
+.contact-page .field input:focus,
+.contact-page .field textarea:focus {
+  border-color: #04124d;
+  box-shadow: 0 4px 18px rgba(4,18,77,0.06);
+}
+
+.contact-page .field input:focus + label,
+.contact-page .field textarea:focus + label,
+.contact-page .field input:not(:placeholder-shown) + label,
+.contact-page .field textarea:not(:placeholder-shown) + label {
+  transform: translateY(-22px);
+  font-size: 12px;
+  color: #04124d;
+}
+
+/* row with two columns */
+.contact-page .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* checkboxes */
+.contact-page .checkboxes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 8px 14px;
+  margin: 14px 0 6px;
+}
+
+.contact-page .checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #333;
+}
+
+.contact-page .checkboxes input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+}
+
+/* submit button */
+.contact-page .submit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  background: #04124d;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+  font-size: 15px;
+}
+
+.contact-page .submit-btn:hover {
+  background: #0923a0;
+}
+
+/* INFO CARD (right column) */
+.contact-page .info-card {
+  position: sticky;
+  top: 100px;
+  align-self: start;
+}
+
+.contact-page .info-card .info-section {
+  background: #fafafa;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 4px 16px rgba(8,12,20,0.03);
+}
+
+.contact-page .info-card .info-section i {
+  font-size: 20px;
+  color: #04124d;
+}
+
+.contact-page .info-card .info-section h3 {
+  margin: 8px 0 6px;
+  font-size: 16px;
+  color: #111;
+}
+
+.contact-page .info-card .info-section a {
+  color: #04124d;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+/* popup */
+.contact-page .popup {
+  display: none; /* toggled by JS */
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  z-index: 1200;
+}
+
+.contact-page .popup-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(6,10,30,0.12);
+}
+
+/* footer fix (keep simple) */
+footer {
+  text-align: center;
+  padding: 22px;
+  background: #fff;
+  color: #666;
+  margin-top: 30px;
+  border-top: 1px solid #f2f2f2;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1000px) {
+  .contact-page .contact-wrap .container {
+    grid-template-columns: 1fr 320px;
+    gap: 20px;
+    padding: 20px;
+  }
+  .contact-page .info-card { top: 80px; }
+}
+
+@media (max-width: 760px) {
+  .contact-page .contact-wrap .container {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+  .contact-page .row { grid-template-columns: 1fr; }
+  .contact-page .checkboxes { grid-template-columns: 1fr; }
+  .contact-page .info-card { position: relative; top: 0; }
+}
+
+/* OPTIONAL: small accessibility helpers */
+.contact-page a:focus,
+.contact-page button:focus,
+.contact-page input:focus,
+.contact-page textarea:focus {
+  outline: 3px solid rgba(4,18,77,0.12);
+  outline-offset: 2px;
+}

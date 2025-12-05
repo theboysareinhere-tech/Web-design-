@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customize Product</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style_customize.css">
+
+    <link rel="stylesheet" href="./responsive.css">
+</head>
+
+<body>
+
+ <header class="custom-header">
+    <h1 id="product-title">Customize Product</h1>
+<button class="back-btn" onclick="history.back()">← Back</button>
+</header>
+
+  <section class="customization-container">
+
+    <div class="left">
+      <img id="product-image" src="images/product_image.png" alt="Product Image">
+
+    </div>
+
+    <div class="right">
+
+      <div class="option-box">
+        <label>Choose Type</label>
+        <select id="type-select">
+          <option value="0">Select an option</option>
+        </select>
+      </div>
+
+      <div class="option-box">
+        <label>Choose Add-ons</label>
+        <select id="addon-select">
+          <option value="0">No add-ons</option>
+        </select>
+      </div>
+      
+
+      <div class="option-box">
+        <label>Quantity</label>
+        <input type="number" id="qty" min="1" value="1">
+      </div>
+
+      <h2 class="price-label">Total: <span id="total-price">$0.00</span></h2>
+
+<div class="button-row">
+    <button id="add-cart-btn" class="btn-cart">Add to Cart</button>
+    <button id="checkout-btn" class="btn-checkout">Checkout</button>
+</div>
+
+
+    </div>
+
+  </section>
+
+  <script src="product_customize.js"></script>
+
+</body>
+</html>

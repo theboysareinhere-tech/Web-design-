@@ -1,0 +1,98 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login_page-1.html");
+    exit();
+}
+
+include 'config.php';
+
+$user_id = $_SESSION['id'];
+
+$sql = "SELECT username, email, purchases, join_date, profile_img FROM users WHERE id = ?";
+$stmt = mysqli_prepare($link, $sql);
+mysqli_stmt_bind_param($stmt, "i", $user_id);
+mysqli_stmt_execute($stmt);
+mysqli_stmt_bind_result($stmt, $username, $email, $purchases, $join_date, $profile_img);
+mysqli_stmt_fetch($stmt);
+mysqli_stmt_close($stmt);
+
+if (!$profile_img) {
+    $profile_img = "images/default.png";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Account - Power ECU</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style_acc.css" />
+
+    <link rel="stylesheet" href="./responsive.css">
+</head>
+<body>
+
+<header class="main-header">
+  <div class="header-left">
+    <div class="logo">
+      <img src="images/logo.png" alt="Power ECU Logo">
+      <h2>Power ECU</h2>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <ul class="nav-links">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="product_index.html">Products</a></li>
+      <li><a href="services_index.html">Services</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <div class="icons">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+
+      <!-- Account Icon -->
+      <a href="account.php" class="account-icon">
+        <i class="fas fa-user-circle"></i>
+      </a>
+
+      <!-- Logout Button -->
+      <a href="logout.php" class="logout-btn">Logout</a>
+
+      <div class="menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></div>
+  </div>
+</header>
+
+<section class="account-container">
+    <div class="profile-card">
+
+      <!-- Profile Image -->
+      <div class="profile-img-wrapper">
+        <img id="profile-img" src="<?php echo $profile_img; ?>" alt="Profile Picture">
+      </div>
+
+      <!-- User Details -->
+      <h2 id="username"><?php echo $username; ?></h2>
+      <p id="email"><?php echo $email; ?></p>
+
+      <div class="account-info">
+        <p><strong>Purchases:</strong> <?php echo $purchases; ?></p>
+        <p><strong>Join Date:</strong> <?php echo $join_date; ?></p>
+      </div>
+
+    </div>
+</section>
+
+</body>
+</html>

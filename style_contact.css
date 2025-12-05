@@ -1,0 +1,235 @@
+/* ===== Body & Fonts ===== */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #333;
+}
+
+/* ===== Container ===== */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    gap: 40px;
+}
+
+/* ===== Form Card ===== */
+.form-card {
+    flex: 1 1 600px;
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+
+.form-card h1 {
+    margin-bottom: 15px;
+}
+
+.form-card p {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* ===== Floating Label Inputs ===== */
+.field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.field input,
+.field textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.field textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.field label {
+    position: absolute;
+    top: 14px;
+    left: 18px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label,
+.field textarea:focus + label,
+.field textarea:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 12px;
+    font-size: 12px;
+    color: #2575fc;
+    background: #fff;
+    padding: 0 5px;
+}
+
+/* ===== Row for first/last name ===== */
+.row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.row .field {
+    flex: 1;
+}
+
+/* ===== Checkboxes ===== */
+.checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.checkboxes label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    user-select: none;
+    background: #f1f1f1;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.checkboxes label span {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid #2575fc;
+    border-radius: 4px;
+    background: #fff;
+    transition: 0.3s;
+}
+
+.checkboxes input[type="checkbox"] {
+    display: none;
+}
+
+.checkboxes input[type="checkbox"]:checked + span {
+    background: #2575fc;
+}
+
+/* ===== Submit Button ===== */
+.submit-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: #fff;
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== Right Info Card ===== */
+.info-card {
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-section {
+    background: rgba(255,255,255,0.95);
+    padding: 25px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.info-section i {
+    font-size: 24px;
+    color: #2575fc;
+}
+
+.info-section:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== Popup ===== */
+.popup {
+    display: none;
+    position: fixed;
+    top:0; left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 0.4s ease;
+}
+
+.popup-box {
+    background: #fff;
+    padding: 40px 50px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    animation: slideIn 0.4s ease;
+}
+
+/* ===== Footer ===== */
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #222;
+    color: #fff;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {transform: translateY(-30px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+/* ===== Responsive ===== */
+@media screen and (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        gap: 30px;
+    }
+}

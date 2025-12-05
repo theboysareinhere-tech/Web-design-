@@ -1,0 +1,381 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 60px;
+  background: #0b1a73;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* NAV LINKS */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #cbd6ff;
+}
+
+/* ICONS */
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icons a {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 18px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.icons a:hover {
+  color: #04124d;
+  transform: scale(1.1);
+}
+
+/* ACCOUNT PROFILE ICON */
+.account-icon {
+  color: #fff;
+  margin-left: 15px;
+  font-size: 20px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.account-icon:hover {
+  color: #04124d;
+  transform: scale(1.1);
+}
+
+/* LOGIN BUTTON */
+.login-btn {
+  background-color: #04124d;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-btn:hover {
+  background-color: #0923a0;
+  transform: scale(1.05);
+}
+
+/* MOBILE MENU ICON */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 22px;
+  margin-left: 15px;
+  color: #fff;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url('Backgrounds/powerecu_background.jpeg') no-repeat center center/cover;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  padding: 0 60px;
+  position: relative;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.hero-content p {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+/* BUTTON */
+.btn {
+  background-color: #5e7e4c;
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #589b2f;
+}
+
+/* SERVICES SECTION (Merged) */
+.services-section {
+  padding: 80px 60px;
+  background: #f8f9fb;
+  text-align: center;
+}
+
+.services-section .services-hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: #0b1a73;
+}
+
+.services-section .services-hero h2 {
+  font-size: 20px;
+  margin-bottom: 40px;
+  color: #333;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  list-style: none;
+}
+
+.service {
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  width: 30%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.service h2 {
+  font-size: 22px;
+  color: #0b1a73;
+  margin-bottom: 15px;
+}
+
+.service p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  header {
+    padding: 15px 30px;
+  }
+
+  .hero {
+    padding: 0 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .services-section {
+    padding: 60px 30px;
+  }
+
+  .service {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: #0b1a73;
+    width: 100%;
+    text-align: center;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .hero {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 90%;
+  }
+
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .service {
+    width: 100%;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .btn,
+  .login-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+}
+/* ACCOUNT PAGE */
+.account-container {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: #f8f9fb;
+}
+
+.profile-card {
+  background: #fff;
+  padding: 40px;
+  width: 420px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-img-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 15px;
+}
+
+.profile-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #0b1a73;
+}
+
+.upload-btn {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  background: #0b1a73;
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.upload-btn:hover {
+  background: #0923a0;
+}
+
+#upload-img {
+  display: none;
+}
+
+.profile-card h2 {
+  margin-top: 10px;
+  font-size: 26px;
+  color: #0b1a73;
+}
+
+.profile-card p {
+  font-size: 15px;
+  color: #555;
+}
+
+.account-info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.account-info p {
+  font-size: 16px;
+  margin: 8px 0;
+}

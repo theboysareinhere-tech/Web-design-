@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: power-ecu
+    env: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    region: oregon
+    numInstances: 1
+    healthCheckPath: /

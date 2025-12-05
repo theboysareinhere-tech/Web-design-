@@ -1,0 +1,229 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ===== Header ===== */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: #1a1a1a;
+    color: white;
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 32px;
+}
+
+/* ===== Services Header with Blue Ribbon ===== */
+.services-header {
+    position: relative;               /* for ribbon pseudo-element */
+    text-align: center;               /* center text */
+    padding: 60px 20px 40px 20px;    /* top, sides, bottom */
+    background: #f7f7f7;             /* light background behind ribbon */
+    color: #04124d;                   /* dark blue text */
+    font-family: Arial, sans-serif;
+}
+
+/* Blue ribbon on top */
+.services-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 8px;
+    background: #0b7dda;
+    border-radius: 4px;
+}
+
+/* Header title */
+.services-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 20px 0 10px 0;
+    line-height: 1.2;
+}
+
+/* Header subtitle */
+.services-header p {
+    font-size: 1.1rem;
+    color: #333;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ===== Services Layout ===== */
+.services-container {
+    max-width: 1250px;
+    margin: 40px auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+/* ===== Service Card ===== */
+.service-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.service-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0b7dda;
+    margin-bottom: 8px;
+}
+
+.time {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.desc {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+/* ===== Book Button ===== */
+.book-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    background: #0b7dda;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.book-btn:hover {
+    background: #095f9d;
+}
+
+/* ===== Booking Page Styles ===== */
+.booking-container {
+    max-width: 700px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.booking-container h1 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.booking-card {
+    background: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.booking-form label {
+    display: block;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+.booking-form input,
+.booking-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.booking-form textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+.booking-form button {
+    width: 100%;
+    padding: 12px;
+    background: #0b7dda;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.booking-form button:hover {
+    background: #095f9d;
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #04124d;
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+    background-color: #03217a;
+    transform: scale(1.1);
+}
+
+/* ===== Responsive Adjustments ===== */
+@media (max-width: 768px) {
+    .services-header h1 {
+        font-size: 2rem;
+    }
+    .services-header p {
+        font-size: 1rem;
+    }
+
+    .services-container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .service-card {
+        padding: 20px;
+    }
+}
